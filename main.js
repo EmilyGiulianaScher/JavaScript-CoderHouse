@@ -1,4 +1,19 @@
+// Declaraciones de variables y objetos
 
+function Empanada(sabor, precio,) {
+    this.sabor = sabor;
+    this.precio = precio;
+}
+
+ const empanadaCarne = new Empanada("Carne", 200);
+ const empanadaPollo = new Empanada("Pollo", 175);
+ const empanadaJyQ = new Empanada("Jamón y Queso", 150);
+ const empanadaHumita = new Empanada("Humita", 180);
+ const empanadaCyQ = new Empanada("Cebolla y Queso", 125);
+
+
+
+// Lógica y procesos
 
 alert("Bienvenido a la fábrica de empanadas! Aquí podrás elegir el tipo, la cantidad y el acompañamiento.");
 let entrada;
@@ -9,43 +24,42 @@ do {
 
     if (entrada !== "finalizar") {
 
-
-        let valor = 150;
-        let cantidadTotal, resultado = 0;
+        let cantidadTotal=0, resultado = 0, unidad=0;
         let bebida;
 
         let opcionValida = false;
+            let ingreso;
 
-        do {
-            alert("Nuestras opciones son: Empanadas de Carne (opcion1), Empanadas de Pollo (opcion2) y Empanadas de Jamón y Queso (opcion3)");
-            let opciones = parseInt(prompt("Ingresa el número de la opción (1, 2, o 3):"));
+       
+            alert("Nuestras opciones son: Empanadas de Carne, Empanadas de Pollo, Empanadas de Jamón y Queso, Empanadas de Humita y Empanadas de Cebolla y Queso");
+            
+            alert(" nuestros precios son: Carne: $200... Pollo: $175... Jamón y Queso: $150... Humita: $180... Cebolla y Queso: $125.")
+            alert("tenemos un 5% off si llevas mas de 1 docena (12 empanadas). Para finalizar el pedido de cantidad y sabor de empanadas, ingresar: continuar")
 
-            switch (opciones) {
-                case 1:
-                    alert("Elegiste la opción de Empanadas de Carne, ahora elige la cantidad.");
-                    opcionValida = true; 
-                    break;
-                case 2:
-                    alert("Elegiste la opción de Empanadas de Pollo, ahora elige la cantidad.");
-                    opcionValida = true;
-                    break;
-                case 3:
-                    alert("Elegiste la opción de Jamón y Queso, ahora elige la cantidad.");
-                    opcionValida = true; 
-                    break;
-                default:
-                    alert("Opción no válida");
-                    break;
-            }
-        } while (!opcionValida); // Continuar el bucle hasta que se ingrese una opción válida
+            do {
+              sabor = prompt("elegi pue");
+              sabor = sabor.toLowerCase();
+                    sabor.push('');
+                    if (sabor == Carne) {
+                        cantidadTotal + 200;
+                    } else if (sabor == Pollo) {
+                        cantidadTotal +175;
+                    }else if (sabor == JyQ) {
+                        cantidadTotal +150;
+                    }else if (sabor == Humita) {
+                        cantidadTotal +180;
+                    }else if (sabor == CyQ) {
+                        cantidadTotal +125;
+                    }
+               precio += cantidadTotal;
+               unidad++;
 
 
 
+            } while (ingreso != "continuar");
 
-        cantidadTotal = parseInt(prompt("Ingresa la cantidad (individual) de empanadas, el valor es de $150 c/u"));
-
-        function calculo(cantidadTotal, valor) {
-            return cantidadTotal * valor;
+        function calculo(cantidadTotal, precio) {
+            return cantidadTotal * precio;
         }
         while (true) {
             bebida = prompt("¿Deseas agregar una bebida por el costo adicional de $100? Ingresa 'si' o 'no':");
