@@ -28,19 +28,20 @@ do {
         alert("Tenemos un 10% de descuento si llevas más de 1 docena (12 empanadas)");
 
         let pedido = [];
+        let userInput;
 
         while (true) {
-            let sabor = prompt("Elige el sabor de la empanada (Carne, Pollo, Jamón y Queso, Humita o Cebolla y Queso)  Para finalizar el pedido, ingresa: 'continuar':");
-            sabor = sabor.toLowerCase();
-
-            if (sabor === "continuar") {
+            userInput = prompt("Elige el sabor de la empanada (Carne, Pollo, Jamón y Queso, Humita o Cebolla y Queso)  Para finalizar el pedido, ingresa: 'continuar':");
+            userInput = userInput.toLowerCase();
+        
+            if (userInput === "continuar") {
                 break;
             }
-
-            let empanadaElegida = empanadas.find(empanada => empanada.sabor.toLowerCase() === sabor);
-
+        
+            let empanadaElegida = empanadas.find(empanada => empanada.sabor.toLowerCase() === userInput);
+        
             if (empanadaElegida) {
-                let cantidad = parseInt(prompt("Ingresa la cantidad de empanadas de " + ${empanadaElegida.sabor} + "que deseas:"));
+                let cantidad = parseInt(prompt("Ingresa la cantidad de empanadas de " + empanadaElegida.sabor + " que deseas:"));
                 cantidadTotal += cantidad * empanadaElegida.precio;
                 pedido.push({ sabor: empanadaElegida.sabor, cantidad: cantidad });
             } else {
@@ -51,6 +52,8 @@ do {
         if (pedido.length >= 12) {
             cantidadTotal *= 0.90; // Aplicar descuento del 10% si se compran más de 1 docena
         }
+
+    
 
         while (true) {
             bebida = prompt("¿Deseas agregar una bebida por el costo adicional de $300? Ingresa 'si' o 'no':");
@@ -71,7 +74,8 @@ do {
 
         let resumenPedido = "Empanadas en tu pedido:\n";
         for (const item of pedido) {
-            resumenPedido += ${item.cantidad} " empanadas de" + ${item.sabor}\n;
+            resumenPedido += item.cantidad + " empanadas de " + item.sabor + "\n";
+
         }
 
         const precioTotalSinDescuento = cantidadTotal;
