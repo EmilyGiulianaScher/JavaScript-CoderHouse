@@ -8,11 +8,13 @@ function Empanada(sabor, precio) {
 const empanadas = [new Empanada("Carne", 200), new Empanada("Pollo", 175), new Empanada("Jamón y Queso", 150), new Empanada("Humita", 180), new Empanada("Cebolla y Queso", 125)];
 
 let entrada;
-
+let cantidadTotalEmpanadas = 0; // Variable para llevar un seguimiento de la cantidad total de empanadas en el pedido
 
 // Lógica y procesos
 
 alert("Bienvenido a la fábrica de empanadas! Aquí podrás elegir el tipo, la cantidad y el acompañamiento.");
+
+
 
 
 do {
@@ -30,30 +32,30 @@ do {
         let pedido = [];
         let userInput;
 
-        while (true) {
+        do {
             userInput = prompt("Elige el sabor de la empanada (Carne, Pollo, Jamón y Queso, Humita o Cebolla y Queso)  Para finalizar el pedido, ingresa: 'continuar':");
             userInput = userInput.toLowerCase();
-        
-            if (userInput === "continuar") {
-                break;
+
+            if (userInput !== "continuar") {
+                let empanadaElegida = empanadas.find(empanada => empanada.sabor.toLowerCase() === userInput);
+
+                if (empanadaElegida) {
+                    let cantidad = parseInt(prompt("Ingresa la cantidad de empanadas de " + empanadaElegida.sabor + " que deseas:"));
+                    cantidadTotal += cantidad * empanadaElegida.precio;
+                    cantidadTotalEmpanadas += cantidad;
+                    pedido.push({ sabor: empanadaElegida.sabor, cantidad: cantidad }); 
+                } else {
+                    alert("Sabor no válido. Por favor, elige un sabor de la lista.");
+                }
             }
-        
-            let empanadaElegida = empanadas.find(empanada => empanada.sabor.toLowerCase() === userInput);
-        
-            if (empanadaElegida) {
-                let cantidad = parseInt(prompt("Ingresa la cantidad de empanadas de " + empanadaElegida.sabor + " que deseas:"));
-                cantidadTotal += cantidad * empanadaElegida.precio;
-                pedido.push({ sabor: empanadaElegida.sabor, cantidad: cantidad });
-            } else {
-                alert("Sabor no válido. Por favor, elige un sabor de la lista.");
-            }
-        }
+        } while (userInput !== "continuar");
+
 
         if (pedido.length >= 12) {
             cantidadTotal *= 0.90; // Aplicar descuento del 10% si se compran más de 1 docena
         }
 
-    
+
 
         while (true) {
             bebida = prompt("¿Deseas agregar una bebida por el costo adicional de $300? Ingresa 'si' o 'no':");
@@ -73,6 +75,7 @@ do {
         alert("Resumen del pedido:");
 
         let resumenPedido = "Empanadas en tu pedido:\n";
+        
         for (const item of pedido) {
             resumenPedido += item.cantidad + " empanadas de " + item.sabor + "\n";
 
@@ -81,8 +84,10 @@ do {
         const precioTotalSinDescuento = cantidadTotal;
         let descuento = 0;
 
-        if (pedido.length >= 12) {
+        if (cantidadTotalEmpanadas >= 12) {
+            console.log("Cantidad de empanadas en el pedido:", cantidadTotalEmpanadas);
             descuento = precioTotalSinDescuento * 0.10; // Calcular el descuento del 10%
+            console.log("Descuento aplicado:", descuento);
         }
 
         const precioFinalConDescuento = precioTotalSinDescuento - descuento;
@@ -98,7 +103,7 @@ do {
 
 
     }
-} while (entrada !== "finalizar");
+} while (entrada !== "finalizar");
 
 
 
