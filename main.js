@@ -43,7 +43,7 @@ do {
                     let cantidad = parseInt(prompt("Ingresa la cantidad de empanadas de " + empanadaElegida.sabor + " que deseas:"));
                     cantidadTotal += cantidad * empanadaElegida.precio;
                     cantidadTotalEmpanadas += cantidad;
-                    pedido.push({ sabor: empanadaElegida.sabor, cantidad: cantidad }); 
+                    pedido.push({ sabor: empanadaElegida.sabor, cantidad: cantidad });
                 } else {
                     alert("Sabor no válido. Por favor, elige un sabor de la lista.");
                 }
@@ -61,52 +61,58 @@ do {
             bebida = prompt("¿Deseas agregar una bebida por el costo adicional de $300? Ingresa 'si' o 'no':");
             bebida = bebida.toLowerCase();
 
-            if (bebida === "si") {
-                cantidadTotal += 300;
+            if (bebida == "si") {
+                cantidadTotal += 300; // Mover esta línea aquí
                 break;
-            } else if (bebida === "no") {
+            } else if (bebida == "no") {
                 break;
             } else {
                 alert("Respuesta no válida. Por favor, ingresa 'si' o 'no'.");
             }
         }
 
-
         alert("Resumen del pedido:");
 
         let resumenPedido = "Empanadas en tu pedido:\n";
-        
+
         for (const item of pedido) {
             resumenPedido += item.cantidad + " empanadas de " + item.sabor + "\n";
-
         }
 
-        const precioTotalSinDescuento = cantidadTotal;
-        let descuento = 0;
+        let precioTotalSinDescuento = 0; // Inicializar precioTotalSinDescuento
 
         if (cantidadTotalEmpanadas >= 12) {
+            for (const item of pedido) {
+                const empanadaElegida = empanadas.find(empanada => empanada.sabor === item.sabor);
+                precioTotalSinDescuento == cantidadTotal;
+            }
+
             console.log("Cantidad de empanadas en el pedido:", cantidadTotalEmpanadas);
-            descuento = precioTotalSinDescuento * 0.10; // Calcular el descuento del 10%
+            const descuento = precioTotalSinDescuento * 0.10; // Calcular el descuento del 10%
             console.log("Descuento aplicado:", descuento);
+
+            const precioFinalConDescuento = precioTotalSinDescuento - descuento;
+
+            const mensaje = `Resumen del pedido: 
+    ${resumenPedido} 
+    Total sin descuento: $${precioTotalSinDescuento.toFixed(2)}
+    Descuento (10%): -$${descuento.toFixed(2)}
+    Precio final con descuento: $${precioFinalConDescuento.toFixed(2)}`;
+
+            alert(mensaje);
+        } else {
+            for (const item of pedido) {
+                const empanadaElegida = empanadas.find(empanada => empanada.sabor === item.sabor);
+                precioTotalSinDescuento += item.cantidad * empanadaElegida.precio;
+            }
+
+            const mensajeSinDescuento = `Resumen del pedido: 
+    ${resumenPedido} 
+    Precio a pagar: $${precioTotalSinDescuento.toFixed(2)}`;
+
+            alert(mensajeSinDescuento);
         }
-
-        const precioFinalConDescuento = precioTotalSinDescuento - descuento;
-
-        const mensaje = `Resumen del pedido: 
-        Empanadas en tu pedido:\n${resumenPedido} 
-        Total sin descuento: $${precioTotalSinDescuento.toFixed(2)}
-        Descuento (10%): -$${descuento.toFixed(2)}
-        Precio final con descuento: $${precioFinalConDescuento.toFixed(2)}`;
-
-        alert(mensaje);
-
 
 
     }
 } while (entrada !== "finalizar");
-
-
-
-
-
-
