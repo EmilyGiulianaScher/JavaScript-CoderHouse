@@ -1,3 +1,15 @@
+//DOM 
+let recordatorio = document.getElementById("recordatorio")
+let Sabores = document.getElementsByClassName("Sabores")
+
+for (const x of Sabores) {
+    console.log(x.innerHTML); 
+}
+
+let ver = document.getElementById('ver')
+ver.innerText="No Me Ves"
+
+
 // Declaraciones de variables y objetos
 
 function Empanada(sabor, precio) {
@@ -10,8 +22,10 @@ const empanadas = [new Empanada("Carne", 200), new Empanada("Pollo", 175), new E
 let entrada;
 let cantidadTotalEmpanadas = 0; // Variable para llevar un seguimiento de la cantidad total de empanadas en el pedido
 
-// Lógica y procesos
+//Storage
+localStorage.setItem('bienvenida', 'Bienvenido a Frizaditas!, alias las mejores empanadas...')
 
+// Lógica y procesos
 alert("Bienvenido a la fábrica de empanadas! Aquí podrás elegir el tipo, la cantidad y el acompañamiento.");
 
 
