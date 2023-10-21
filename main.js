@@ -37,13 +37,20 @@ function guardarDato() {
 
 function realizarFuncion() {
     let totalEmpanadas = 0;
+    let precioTotal=0;
 
     for (const pedido of pedidos) {
         totalEmpanadas += pedido.cantidad;
     }
 
+    for (const pedido of pedidos) {
+        precioTotal += pedido.precio * pedido.cantidad;
+    }
+
+
     if (totalEmpanadas > 0) {
-        alert("Total de empanadas en el pedido: " + totalEmpanadas);
+        alert("Total de empanadas en el pedido: " + totalEmpanadas + " precio total: " + precioTotal);
+
     } else {
         alert("No se han agregado empanadas al pedido.");
     }
