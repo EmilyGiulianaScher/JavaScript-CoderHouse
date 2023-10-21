@@ -1,0 +1,12 @@
+.titulo{
+    text-align: center;
+    color: blue;
+}
+
+.recordatorio{
+    background-color: rgb(95, 95, 222);
+    text-align: center;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+}
