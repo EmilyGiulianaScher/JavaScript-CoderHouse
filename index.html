@@ -1,40 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Frizaditas</title>
 </head>
+
 <body>
 
-    <h1 class="titulo"> BIENVENIDO A FRIZADITAS </h1>
+    <header>
+        <h1> FRIZADITAS </h1>
 
 
-    <div class="recordatorio">
-        <h2>Recordatorio: tenemos muchas variedades de sabores, cada una con su respectivo precio... no dudes en probarlas todas!!</h1>
-        <h2> A continuación, vas a poder elegir la cantidad de empanadas y sus sabores! </h2>
-    </div>
-  
-<div class="lista">
-<h4> LISTA DE SABORES </h4>
+    </header>
+    <section>
+        <div>
+            <h2> Seleccioná la opción que más te guste </h2>
+            <div class="seleccion">
+                <div class="tarjeta">
+                    <img class="img-item" src="imagenes/empanadaCarne.jpeg" alt="empanadaCarne">
+                    <div class="tarjetaInfo">
+                        <h3 class="titulo-item"> Empanada de Carne </h3>
+                        <p class="precio-item"> Precio: $200 </p>
+                        <button class="boton-item"> AGREGAR AL CARRITO </button>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <img class="img-item" src="imagenes/empanadaPollo.jpg" alt="empanadaPollo">
+                    <div class="tarjetaInfo">
+                        <h3 class="titulo-item"> Empanada de Pollo </h3>
+                        <p class="precio-item"> Precio: $175 </p>
+                        <button class="boton-item"> AGREGAR AL CARRITO </button>
+                    </div>
 
-<ul id="listaDeSabores">
-    <li class="Sabores"> Empanada de Carne................... $200</li>
-    <li class="Sabores"> Empanada de Pollo.................... $175</li>
-    <li class="Sabores"> Empanada de Jamón y Queso.... $150</li>
-    <li class="Sabores"> Empanada de Humita................ $180</li>
-    <li class="Sabores"> Empanada de Cebolla y Queso.. $125</li>
-</ul>
+                </div>
+                <div class="tarjeta">
+                    <img class="img-item" src="imagenes/empanadaJyQ.jpg" alt="empanadaJyQ">
+                    <div class="tarjetaInfo">
+                        <h3 class="titulo-item"> Empanada de Jamón y Queso </h3>
+                        <p class="precio-item"> Precio: $200 </p>
+                        <button class="boton-item"> AGREGAR AL CARRITO </button>
+                    </div>
 
-</div>
-<div class="formulario">
-    <input id="nombre" type="text">
-    <input id="cantidad" type="number">
-    <button id="guardarDatoBtn">Guardar</button>
-    <button id="realizarFuncionBtn">Realizar Pedido</button>
-</div>
-    
+                </div>
+                <div class="tarjeta">
+                    <img class="img-item" src="imagenes/empanadaHumita.jpg" alt="empanadaHumita">
+                    <div class="tarjetaInfo">
+                        <h3 class="titulo-item"> Empanada de Humita </h3>
+                        <p class="precio-item"> Precio: $200 </p>
+                        <button class="boton-item"> AGREGAR AL CARRITO </button>
+                    </div>
+
+                </div>
+                <div class="tarjeta">
+                    <img class="img-item" src="imagenes/empanadaCyQ.jpg" alt="empanadaCyQ">
+                    <div class="tarjetaInfo">
+                        <h3 class="titulo-item"> Empanada de Cebolla y Queso </h3>
+                        <p class="precio-item"> Precio: $125 </p>
+                        <button class="boton-item"> AGREGAR AL CARRITO </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- Carrito de Compras -->
+        <div class="carrito" id="carrito">
+            <div class="header-carrito">
+                <h2>Tu Carrito</h2>
+            </div>
+<!--
+            <div class="carrito-items">
+
+                <div class="carrito-item">
+                    <img src="img/boxengasse.png" width="80px" alt="">
+                    <div class="carrito-item-detalles">
+                        <span class="carrito-item-titulo">Box Engasse</span>
+                        <div class="selector-cantidad">
+                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                            <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                        </div>
+                        <span class="carrito-item-precio">$15.000,00</span>
+                    </div>
+                    <span class="btn-eliminar">
+                        <i class="fa-solid fa-trash"></i>
+                    </span>
+                </div>
+                <div class="carrito-item">
+                    <img src="img/skinglam.png" width="80px" alt="">
+                    <div class="carrito-item-detalles">
+                        <span class="carrito-item-titulo">Skin Glam</span>
+                        <div class="selector-cantidad">
+                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                            <input type="text" value="3" class="carrito-item-cantidad" disabled>
+                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                        </div>
+                        <span class="carrito-item-precio">$18.000,00</span>
+                    </div>
+                    <button class="btn-eliminar">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+-->
+            </div>
+            <div class="carrito-total">
+                <div class="fila">
+                    <strong>Tu Total</strong>
+                    <span class="carrito-precio-total">
+                        $120.000,00
+                    </span>
+                </div>
+                <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
+            </div>
+        </div>
+    </section>
+
+
     <script src="main.js"></script>
 </body>
+
 </html>
