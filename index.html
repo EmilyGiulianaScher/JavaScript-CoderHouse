@@ -1,79 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
-    <title>Frizaditas</title>
+    <script src="main.js" async></script>
+    <title> Frizaditas </title>
 </head>
-
 <body>
-
     <header>
-        <h1> FRIZADITAS </h1>
-
-
+        
     </header>
-    <section>
-        <div>
-            <h2> Seleccioná la opción que más te guste </h2>
-            <div class="seleccion">
-                <div class="tarjeta">
-                    <img class="img-item" src="imagenes/empanadaCarne.jpeg" alt="empanadaCarne">
-                    <div class="tarjetaInfo">
-                        <h3 class="titulo-item"> Empanada de Carne </h3>
-                        <p class="precio-item"> Precio: $200 </p>
-                        <button class="boton-item"> AGREGAR AL CARRITO </button>
-                    </div>
-                </div>
-                <div class="tarjeta">
-                    <img class="img-item" src="imagenes/empanadaPollo.jpg" alt="empanadaPollo">
-                    <div class="tarjetaInfo">
-                        <h3 class="titulo-item"> Empanada de Pollo </h3>
-                        <p class="precio-item"> Precio: $175 </p>
-                        <button class="boton-item"> AGREGAR AL CARRITO </button>
-                    </div>
-
-                </div>
-                <div class="tarjeta">
-                    <img class="img-item" src="imagenes/empanadaJyQ.jpg" alt="empanadaJyQ">
-                    <div class="tarjetaInfo">
-                        <h3 class="titulo-item"> Empanada de Jamón y Queso </h3>
-                        <p class="precio-item"> Precio: $200 </p>
-                        <button class="boton-item"> AGREGAR AL CARRITO </button>
-                    </div>
-
-                </div>
-                <div class="tarjeta">
-                    <img class="img-item" src="imagenes/empanadaHumita.jpg" alt="empanadaHumita">
-                    <div class="tarjetaInfo">
-                        <h3 class="titulo-item"> Empanada de Humita </h3>
-                        <p class="precio-item"> Precio: $200 </p>
-                        <button class="boton-item"> AGREGAR AL CARRITO </button>
-                    </div>
-
-                </div>
-                <div class="tarjeta">
-                    <img class="img-item" src="imagenes/empanadaCyQ.jpg" alt="empanadaCyQ">
-                    <div class="tarjetaInfo">
-                        <h3 class="titulo-item"> Empanada de Cebolla y Queso </h3>
-                        <p class="precio-item"> Precio: $125 </p>
-                        <button class="boton-item"> AGREGAR AL CARRITO </button>
-                    </div>
-
-                </div>
+    <section class="contenedor">
+        <!-- Contenedor de elementos -->
+        <div class="contenedor-items">
+            <div class="item">
+                <span class="titulo-item"> Empanada de Carne </span>
+                <img src="imagenes/empanadaCarne.jpeg" alt="empanadaCarne" class="img-item">
+                <span class="precio-item">$200</span>
+                <button class="boton-item">Agregar al Carrito</button>
             </div>
-
+            <div class="item">
+                <span class="titulo-item"> Empanada de Pollo </span>
+                <img src="imagenes/empanadaPollo.jpg" alt="empanadaPollo" class="img-item">
+                <span class="precio-item">$175</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item"> Empanada de Jamón y Queso </span>
+                <img src="imagenes/empanadaJyQ.jpg" alt="empanadaJyQ" class="img-item">
+                <span class="precio-item">$150</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item"> Empanada de Humita </span>
+                <img src="imagenes/empanadaHumita.jpg" alt="empanadaHumita" class="img-item">
+                <span class="precio-item">$180</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item"> Empanada de Cebolla y Queso </span>
+                <img src="imagenes/empanadaCyQ.jpg" alt="empanadaCyQ" class="img-item">
+                <span class="precio-item">$125</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+        
         </div>
         <!-- Carrito de Compras -->
         <div class="carrito" id="carrito">
             <div class="header-carrito">
                 <h2>Tu Carrito</h2>
             </div>
-<!--
-            <div class="carrito-items">
 
+            <div class="carrito-items">
+                <!-- 
                 <div class="carrito-item">
                     <img src="img/boxengasse.png" width="80px" alt="">
                     <div class="carrito-item-detalles">
@@ -85,9 +67,9 @@
                         </div>
                         <span class="carrito-item-precio">$15.000,00</span>
                     </div>
-                    <span class="btn-eliminar">
+                   <span class="btn-eliminar">
                         <i class="fa-solid fa-trash"></i>
-                    </span>
+                   </span>
                 </div>
                 <div class="carrito-item">
                     <img src="img/skinglam.png" width="80px" alt="">
@@ -100,11 +82,11 @@
                         </div>
                         <span class="carrito-item-precio">$18.000,00</span>
                     </div>
-                    <button class="btn-eliminar">
+                   <button class="btn-eliminar">
                         <i class="fa-solid fa-trash"></i>
-                    </button>
+                   </button>
                 </div>
--->
+                 -->
             </div>
             <div class="carrito-total">
                 <div class="fila">
@@ -117,9 +99,5 @@
             </div>
         </div>
     </section>
-
-
-    <script src="main.js"></script>
 </body>
-
 </html>
