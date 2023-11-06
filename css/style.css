@@ -1,73 +1,88 @@
-
-h1{
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Titillium+Web:wght@200;300;400;600;700&display=swap');
+*{
+    margin: 0;
+    padding:0;
+    font-family: 'Open Sans';
 }
-h2{
-    margin-left: 20px;
-}
-
-
-
-.seleccion{
-    display: flex;
-    justify-content: space-between; /* Asegura que las tarjetas estén igualmente espaciadas */
-  
-}
-.tarjeta{
-    display: flex;
-    flex: 1; /* Hace que todas las tarjetas tengan el mismo ancho */
-    margin: 0 10px; /* Espacio entre las tarjetas */
-    text-align: center;
-  
-    padding: 20px;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(237, 237, 250);
-    border-radius: 8px;
-    box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.2);
-
-  
-}
-.tarjeta:hover{
-    background-color: rgb(198, 198, 222);
-    box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.7);
-}
-.tarjetaInfo{
-    padding: 15px 30px;
-}
-
-.tarjeta img {
-    max-width: 100%; /* Asegura que las imágenes tengan el mismo tamaño */
-    height: 250px;
-    border-radius: 4px;
-}
-
-
 body{
-    background-color: #90caf9;
+    background-color: rgb(239,227,193);
 }
-button {
-    padding: 10px 20px;
+header{
+    background: url(../imagenes/frizaditas.png);
+    background-size: cover;
+    background-position:center;
+    height: 400px;
+}
+
+
+.contenedor{
+
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    /* oculto lo que queda fuera del .contenedor */
+    contain: paint;
+}
+/* SECCION CONTENEDOR DE ITEMS */
+.contenedor .contenedor-items{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-gap:30px;
+    grid-row-gap: 30px;
+   
+    width: 100%;
+    transition: .3s;
+}
+.contenedor .contenedor-items .item{
+    max-width: 200px;
+    margin: auto;
+    border-style: none;
+    box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    transition: .3s;
+}
+.contenedor .contenedor-items .item .img-item{
+    width: 100%;
+    height: 150px;
+   
+}
+.contenedor .contenedor-items .item:hover{
+    box-shadow: 0 0 10px #666;
+    scale: 1.05;
+}
+.contenedor .contenedor-items .item .titulo-item{
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+.contenedor .contenedor-items .item .precio-item{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: rgb(228,180,95);
+  
+}
+
+.contenedor .contenedor-items .item .boton-item{
+    display: block;
+    padding: 15px;
     margin: 10px;
     border-radius: 5px;
-    background-color: #4CAF50;
+    background-color: rgb(242,158,32);
     color: white;
     font-size: 18px;
     border: none;
     cursor: pointer;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #3e8e41;
-  }
-  
-  button:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px #7fbf7f;
-  }
 
+}
 /* seccion carrito */
 .carrito{
     border: 1px solid #666;
@@ -80,7 +95,8 @@ button {
     top: 0;
     transition: .3s;
     /* Estilos para ocultar */
-  
+    margin-right: -100%;
+    opacity: 0;
 }
 .carrito .header-carrito{
     background-color: #000;
@@ -185,4 +201,19 @@ button {
 .carrito-total .btn-pagar:hover{
     scale: 1.05;
 }
+
+/* SECCION RESPONSIVE */
+@media screen and (max-width: 850px) {
+    .contenedor {
+      display: block;
+    }
+    .contenedor-items{
+        width: 100% !important;
+    }
+    .carrito{
+        width: 100%;
+    }
+  }
+
+
 
