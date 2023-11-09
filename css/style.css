@@ -22,7 +22,7 @@ header{
     display: flex;
     justify-content: space-between;
     /* oculto lo que queda fuera del .contenedor */
-    contain: paint;
+  
 }
 /* SECCION CONTENEDOR DE ITEMS */
 .contenedor .contenedor-items{
@@ -201,19 +201,72 @@ header{
 .carrito-total .btn-pagar:hover{
     scale: 1.05;
 }
-
-/* SECCION RESPONSIVE */
-@media screen and (max-width: 850px) {
-    .contenedor {
-      display: block;
-    }
-    .contenedor-items{
-        width: 100% !important;
-    }
-    .carrito{
-        width: 100%;
-    }
+#botonRecordatorio-container {
+    text-align: center;
   }
+  
+#botonRecordatorio{
+    font-size: 20px;
+  text-align: center;
+    padding: 10px;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-style: none;
+    background-color: rgb(228,180,95);
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+#popup-mensaje{
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+display: none;
+background-color: rgb(254,80,45);
+color: #f3f3f3;
+padding: 30px;
+box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+border-radius: 5px;
 
+}
 
+#popup-mensaje.popup-active{
+    display: block;
+}
 
+.cripto-container{
+    background-image: url(../imagenes/cripto1_ml_resize_x2_toned_light_ai.jpg);
+    margin-bottom: 30px;
+    background-size: cover;
+    background-position:center;
+    height: 400px;
+}
+.cripto-parrf{
+    background-color: #f3f3f365;
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 15px;
+    padding: 30px;
+box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+border-radius: 5px;
+
+}
+
+h3 {
+    color: #333;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+#crypto-info {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+    margin-left: 15px;
+}
